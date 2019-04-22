@@ -1,0 +1,240 @@
+2019-04-22T15:35:55.750+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T15:35:56.279+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T15:35:56.284+0300 I CONTROL  [initandlisten] MongoDB starting : pid=14180 port=27017 dbpath=C:\data\ 64-bit host=CO-YAR-WS201
+2019-04-22T15:35:56.284+0300 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-04-22T15:35:56.284+0300 I CONTROL  [initandlisten] db version v4.0.9
+2019-04-22T15:35:56.284+0300 I CONTROL  [initandlisten] git version: fc525e2d9b0e4bceff5c2201457e564362909765
+2019-04-22T15:35:56.284+0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten] modules: none
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten] build environment:
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-04-22T15:35:56.285+0300 I CONTROL  [initandlisten] options: { config: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "C:\data\", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.log", quiet: true } }
+2019-04-22T15:35:56.290+0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3562M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-04-22T15:35:56.348+0300 I STORAGE  [initandlisten] WiredTiger message [1555936556:347723][14180:140730903189216], txn-recover: Set global recovery timestamp: 0
+2019-04-22T15:35:56.371+0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-04-22T15:35:56.406+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:35:56.406+0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-04-22T15:35:56.406+0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-04-22T15:35:56.406+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:35:56.407+0300 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 7ce60939-5e96-47f0-a24d-a501cb3ae174
+2019-04-22T15:35:56.429+0300 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2019-04-22T15:35:56.436+0300 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 411132e9-dc5c-4507-971d-9265266bdd3a
+2019-04-22T15:35:56.756+0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/data/diagnostic.data'
+2019-04-22T15:35:56.760+0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-04-22T15:35:56.760+0300 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: eb9f9faf-3597-48d6-8401-d3d899b871d4
+2019-04-22T15:35:56.794+0300 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-04-22T15:35:56.795+0300 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-04-22T15:35:56.800+0300 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:36:33.333+0300 I CONTROL  [thread1] Ctrl-C signal
+2019-04-22T15:36:33.334+0300 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2019-04-22T15:36:33.335+0300 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2019-04-22T15:36:33.337+0300 I CONTROL  [consoleTerminate] Shutting down free monitoring
+2019-04-22T15:36:33.338+0300 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2019-04-22T15:36:33.348+0300 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2019-04-22T15:36:33.353+0300 I STORAGE  [consoleTerminate] Shutting down session sweeper thread
+2019-04-22T15:36:33.353+0300 I STORAGE  [consoleTerminate] Finished shutting down session sweeper thread
+2019-04-22T15:36:33.499+0300 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2019-04-22T15:36:33.501+0300 I CONTROL  [consoleTerminate] now exiting
+2019-04-22T15:36:33.501+0300 I CONTROL  [consoleTerminate] shutting down with code:12
+2019-04-22T15:49:10.826+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T15:49:11.495+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] MongoDB starting : pid=6748 port=27017 dbpath=C:\data\ 64-bit host=CO-YAR-WS201
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] db version v4.0.9
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] git version: fc525e2d9b0e4bceff5c2201457e564362909765
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] modules: none
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten] build environment:
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-04-22T15:49:11.502+0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-04-22T15:49:11.503+0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-04-22T15:49:11.503+0300 I CONTROL  [initandlisten] options: { config: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "C:\data\", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.log", quiet: true } }
+2019-04-22T15:49:11.507+0300 I STORAGE  [initandlisten] Detected data files in C:\data\ created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-04-22T15:49:11.508+0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3562M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-04-22T15:49:11.891+0300 I STORAGE  [initandlisten] WiredTiger message [1555937351:890718][6748:140730903189216], txn-recover: Main recovery loop: starting at 1/20992 to 2/256
+2019-04-22T15:49:12.207+0300 I STORAGE  [initandlisten] WiredTiger message [1555937352:206906][6748:140730903189216], txn-recover: Recovering log 1 through 2
+2019-04-22T15:49:12.391+0300 I STORAGE  [initandlisten] WiredTiger message [1555937352:391011][6748:140730903189216], txn-recover: Recovering log 2 through 2
+2019-04-22T15:49:12.546+0300 I STORAGE  [initandlisten] WiredTiger message [1555937352:545108][6748:140730903189216], txn-recover: Set global recovery timestamp: 0
+2019-04-22T15:49:12.582+0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-04-22T15:49:12.599+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:49:12.599+0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-04-22T15:49:12.599+0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-04-22T15:49:12.599+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:49:12.892+0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/data/diagnostic.data'
+2019-04-22T15:49:12.895+0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-04-22T15:49:13.327+0300 I NETWORK  [conn1] received client metadata from 127.0.0.1:57526 conn1: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T15:49:14.387+0300 I STORAGE  [conn1] createCollection: PortalForStudents.students with generated UUID: eb6f2979-6931-4c0e-9e8b-fc6e57c54544
+2019-04-22T15:49:14.428+0300 I STORAGE  [conn2] createCollection: PortalForStudents.contracts with generated UUID: ebc411bf-bffd-47e1-b0d4-81fdfc6e6da9
+2019-04-22T15:50:17.223+0300 I NETWORK  [conn3] received client metadata from 127.0.0.1:57581 conn3: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T15:50:48.993+0300 I NETWORK  [conn7] received client metadata from 127.0.0.1:57611 conn7: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T15:50:49.032+0300 I INDEX    [conn7] build index on: PortalForStudents.students properties: { v: 2, unique: true, key: { username: 1 }, name: "username_1", ns: "PortalForStudents.students", background: true }
+2019-04-22T15:50:49.033+0300 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:50:50.060+0300 I INDEX    [conn8] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { number: 1 }, name: "number_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T15:50:50.060+0300 I INDEX    [conn8] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:50:50.079+0300 I INDEX    [conn7] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { workdays.date: 1 }, name: "workdays.date_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T15:50:50.080+0300 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:51:26.536+0300 I NETWORK  [conn9] received client metadata from 127.0.0.1:57654 conn9: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T15:56:03.515+0300 I NETWORK  [conn14] received client metadata from 127.0.0.1:57892 conn14: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T15:56:15.602+0300 I CONTROL  [thread19] Ctrl-C signal
+2019-04-22T15:56:15.602+0300 I CONTROL  [consoleTerminate] got CTRL_C_EVENT, will terminate after current cmd ends
+2019-04-22T15:56:15.604+0300 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2019-04-22T15:56:15.606+0300 I CONTROL  [consoleTerminate] Shutting down free monitoring
+2019-04-22T15:56:15.607+0300 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2019-04-22T15:56:15.624+0300 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2019-04-22T15:56:15.625+0300 I STORAGE  [consoleTerminate] Shutting down session sweeper thread
+2019-04-22T15:56:15.626+0300 I STORAGE  [consoleTerminate] Finished shutting down session sweeper thread
+2019-04-22T15:56:15.691+0300 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2019-04-22T15:56:15.691+0300 I CONTROL  [consoleTerminate] now exiting
+2019-04-22T15:56:15.692+0300 I CONTROL  [consoleTerminate] shutting down with code:12
+2019-04-22T15:58:52.085+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T15:58:52.723+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] MongoDB starting : pid=13372 port=27017 dbpath=C:\data\ 64-bit host=CO-YAR-WS201
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] db version v4.0.9
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] git version: fc525e2d9b0e4bceff5c2201457e564362909765
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] modules: none
+2019-04-22T15:58:52.728+0300 I CONTROL  [initandlisten] build environment:
+2019-04-22T15:58:52.729+0300 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-04-22T15:58:52.729+0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-04-22T15:58:52.729+0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-04-22T15:58:52.729+0300 I CONTROL  [initandlisten] options: { config: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "C:\data\", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.log", quiet: true } }
+2019-04-22T15:58:52.733+0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3562M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-04-22T15:58:52.780+0300 I STORAGE  [initandlisten] WiredTiger message [1555937932:779635][13372:140730903189216], txn-recover: Set global recovery timestamp: 0
+2019-04-22T15:58:52.801+0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-04-22T15:58:52.841+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:58:52.841+0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-04-22T15:58:52.841+0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-04-22T15:58:52.842+0300 I CONTROL  [initandlisten] 
+2019-04-22T15:58:52.843+0300 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 7e1874cb-8f0d-4fea-82e9-fed93f5b9c2c
+2019-04-22T15:58:52.865+0300 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2019-04-22T15:58:52.871+0300 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: 22b9d3c9-1fd8-4963-a87a-08e6b8c85312
+2019-04-22T15:58:53.185+0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/data/diagnostic.data'
+2019-04-22T15:58:53.188+0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-04-22T15:58:53.189+0300 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: ef7ad939-90ae-493e-9a96-490a7551a1e6
+2019-04-22T15:58:53.221+0300 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-04-22T15:58:53.221+0300 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-04-22T15:58:53.226+0300 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:58:54.014+0300 I NETWORK  [conn1] received client metadata from 127.0.0.1:58045 conn1: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T15:58:55.058+0300 I STORAGE  [conn1] createCollection: PortalForStudents.students with generated UUID: 5267d77c-efce-4e5f-80bd-8c0967117977
+2019-04-22T15:58:55.100+0300 I STORAGE  [conn2] createCollection: PortalForStudents.contracts with generated UUID: f074b0a7-3da3-4166-8d50-e387dcc88c17
+2019-04-22T15:59:07.528+0300 I NETWORK  [conn3] received client metadata from 127.0.0.1:58060 conn3: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T15:59:07.598+0300 I INDEX    [conn3] build index on: PortalForStudents.students properties: { v: 2, unique: true, key: { username: 1 }, name: "username_1", ns: "PortalForStudents.students", background: true }
+2019-04-22T15:59:07.598+0300 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:59:08.605+0300 I INDEX    [conn4] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { number: 1 }, name: "number_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T15:59:08.605+0300 I INDEX    [conn4] build index done.  scanned 0 total records. 0 secs
+2019-04-22T15:59:08.617+0300 I INDEX    [conn3] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { workdays.date: 1 }, name: "workdays.date_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T15:59:08.617+0300 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+2019-04-22T16:00:44.007+0300 I NETWORK  [conn5] received client metadata from 127.0.0.1:58149 conn5: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T16:12:55.500+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:12:56.334+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] MongoDB starting : pid=14736 port=27017 dbpath=C:\data\ 64-bit host=CO-YAR-WS201
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] db version v4.0.9
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] git version: fc525e2d9b0e4bceff5c2201457e564362909765
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] modules: none
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten] build environment:
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-04-22T16:12:56.339+0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-04-22T16:12:56.340+0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-04-22T16:12:56.340+0300 I CONTROL  [initandlisten] options: { config: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "C:\data\", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.log", quiet: true } }
+2019-04-22T16:12:56.345+0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3562M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-04-22T16:12:56.398+0300 I STORAGE  [initandlisten] WiredTiger message [1555938776:397275][14736:140730903189216], txn-recover: Set global recovery timestamp: 0
+2019-04-22T16:12:56.410+0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-04-22T16:12:56.442+0300 I CONTROL  [initandlisten] 
+2019-04-22T16:12:56.443+0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-04-22T16:12:56.443+0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-04-22T16:12:56.443+0300 I CONTROL  [initandlisten] 
+2019-04-22T16:12:56.444+0300 I STORAGE  [initandlisten] createCollection: admin.system.version with provided UUID: 1098aaa1-c640-45bc-9bfc-48bbb5ff5a50
+2019-04-22T16:12:56.468+0300 I COMMAND  [initandlisten] setting featureCompatibilityVersion to 4.0
+2019-04-22T16:12:56.478+0300 I STORAGE  [initandlisten] createCollection: local.startup_log with generated UUID: f4f9c59b-aabd-4cdc-80a3-5683f5b89780
+2019-04-22T16:12:56.845+0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/data/diagnostic.data'
+2019-04-22T16:12:56.848+0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-04-22T16:12:56.848+0300 I STORAGE  [LogicalSessionCacheRefresh] createCollection: config.system.sessions with generated UUID: 48cdc696-80b4-4d58-92c0-5c53a2bfff30
+2019-04-22T16:12:56.877+0300 I INDEX    [LogicalSessionCacheRefresh] build index on: config.system.sessions properties: { v: 2, key: { lastUse: 1 }, name: "lsidTTLIndex", ns: "config.system.sessions", expireAfterSeconds: 1800 }
+2019-04-22T16:12:56.878+0300 I INDEX    [LogicalSessionCacheRefresh] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-04-22T16:12:56.883+0300 I INDEX    [LogicalSessionCacheRefresh] build index done.  scanned 0 total records. 0 secs
+2019-04-22T16:12:57.555+0300 I NETWORK  [conn1] received client metadata from 127.0.0.1:58840 conn1: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T16:12:58.588+0300 I STORAGE  [conn1] createCollection: PortalForStudents.students with generated UUID: b4c8712c-b69d-41d3-b9cf-d7c20790154c
+2019-04-22T16:12:58.606+0300 I STORAGE  [conn2] createCollection: PortalForStudents.contracts with generated UUID: 2adef5f1-f09c-47f7-bd8d-8549f60e9bf4
+2019-04-22T16:13:33.376+0300 I NETWORK  [conn3] received client metadata from 127.0.0.1:58872 conn3: { driver: { name: "nodejs", version: "3.1.4" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v10.9.0, LE, mongodb-core: 3.1.3" }
+2019-04-22T16:13:33.414+0300 I INDEX    [conn3] build index on: PortalForStudents.students properties: { v: 2, unique: true, key: { username: 1 }, name: "username_1", ns: "PortalForStudents.students", background: true }
+2019-04-22T16:13:33.414+0300 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+2019-04-22T16:13:34.419+0300 I INDEX    [conn4] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { number: 1 }, name: "number_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T16:13:34.419+0300 I INDEX    [conn4] build index done.  scanned 0 total records. 0 secs
+2019-04-22T16:13:34.432+0300 I INDEX    [conn3] build index on: PortalForStudents.contracts properties: { v: 2, unique: true, key: { workdays.date: 1 }, name: "workdays.date_1", ns: "PortalForStudents.contracts", background: true }
+2019-04-22T16:13:34.433+0300 I INDEX    [conn3] build index done.  scanned 0 total records. 0 secs
+2019-04-22T16:14:57.412+0300 I NETWORK  [conn5] received client metadata from 127.0.0.1:58954 conn5: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T16:16:12.227+0300 I CONTROL  [thread10] CTRL_CLOSE_EVENT signal
+2019-04-22T16:16:12.227+0300 I CONTROL  [consoleTerminate] got CTRL_CLOSE_EVENT, will terminate after current cmd ends
+2019-04-22T16:16:12.227+0300 I NETWORK  [consoleTerminate] shutdown: going to close listening sockets...
+2019-04-22T16:16:12.228+0300 I CONTROL  [consoleTerminate] Shutting down free monitoring
+2019-04-22T16:16:12.228+0300 I FTDC     [consoleTerminate] Shutting down full-time diagnostic data capture
+2019-04-22T16:16:12.233+0300 I STORAGE  [consoleTerminate] WiredTigerKVEngine shutting down
+2019-04-22T16:16:12.233+0300 I STORAGE  [consoleTerminate] Shutting down session sweeper thread
+2019-04-22T16:16:12.234+0300 I STORAGE  [consoleTerminate] Finished shutting down session sweeper thread
+2019-04-22T16:16:12.306+0300 I STORAGE  [consoleTerminate] shutdown: removing fs lock...
+2019-04-22T16:16:12.306+0300 I CONTROL  [consoleTerminate] now exiting
+2019-04-22T16:16:12.307+0300 I CONTROL  [consoleTerminate] shutting down with code:12
+2019-04-22T16:26:38.350+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:26:38.855+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:26:38.858+0300 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2019-04-22T16:26:38.859+0300 I CONTROL  [main] Error connecting to the Service Control Manager: Access is denied. (5)
+2019-04-22T16:28:11.100+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:28:11.616+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:28:11.619+0300 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2019-04-22T16:28:11.619+0300 I CONTROL  [main] Error connecting to the Service Control Manager: Access is denied. (5)
+2019-04-22T16:30:26.802+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:30:27.302+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:30:27.305+0300 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2019-04-22T16:30:27.306+0300 I CONTROL  [main] Error connecting to the Service Control Manager: Access is denied. (5)
+2019-04-22T16:38:25.252+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:38:25.711+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:38:25.713+0300 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2019-04-22T16:38:25.719+0300 I CONTROL  [main] Service 'MongoDB' (MongoDB) installed with command line '"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --config C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg --service'
+2019-04-22T16:38:25.719+0300 I CONTROL  [main] Service can be started from the command line with 'net start MongoDB'
+2019-04-22T16:38:50.613+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T16:38:51.072+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T16:38:51.074+0300 I CONTROL  [main] Trying to start Windows service 'MongoDB'
+2019-04-22T16:38:51.075+0300 I CONTROL  [initandlisten] MongoDB starting : pid=7932 port=27017 dbpath=C:\data\ 64-bit host=CO-YAR-WS201
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] targetMinOS: Windows 7/Windows Server 2008 R2
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] db version v4.0.9
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] git version: fc525e2d9b0e4bceff5c2201457e564362909765
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] allocator: tcmalloc
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] modules: none
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] build environment:
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten]     distmod: 2008plus-ssl
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten]     distarch: x86_64
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-04-22T16:38:51.076+0300 I CONTROL  [initandlisten] options: { config: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.cfg", net: { bindIp: "127.0.0.1", port: 27017 }, processManagement: { windowsService: { displayName: "MongoDB", serviceName: "MongoDB" } }, service: true, storage: { dbPath: "C:\data\", journal: { enabled: true } }, systemLog: { destination: "file", logAppend: true, path: "C:\Users\AndreyRi\WebstormProjects\portalForStudents\mongod.log", quiet: true } }
+2019-04-22T16:38:51.079+0300 I STORAGE  [initandlisten] Detected data files in C:\data\ created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-04-22T16:38:51.080+0300 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3562M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-04-22T16:38:51.310+0300 I STORAGE  [initandlisten] WiredTiger message [1555940331:310617][7932:140730903189216], txn-recover: Main recovery loop: starting at 1/40704 to 2/256
+2019-04-22T16:38:51.491+0300 I STORAGE  [initandlisten] WiredTiger message [1555940331:490732][7932:140730903189216], txn-recover: Recovering log 1 through 2
+2019-04-22T16:38:51.596+0300 I STORAGE  [initandlisten] WiredTiger message [1555940331:595793][7932:140730903189216], txn-recover: Recovering log 2 through 2
+2019-04-22T16:38:51.688+0300 I STORAGE  [initandlisten] WiredTiger message [1555940331:688856][7932:140730903189216], txn-recover: Set global recovery timestamp: 0
+2019-04-22T16:38:51.721+0300 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2019-04-22T16:38:51.738+0300 I CONTROL  [initandlisten] 
+2019-04-22T16:38:51.738+0300 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-04-22T16:38:51.738+0300 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-04-22T16:38:51.738+0300 I CONTROL  [initandlisten] 
+2019-04-22T16:38:51.957+0300 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory 'C:/data/diagnostic.data'
+2019-04-22T16:38:51.959+0300 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-04-22T16:38:51.959+0300 I STORAGE  [initandlisten] Service running
+2019-04-22T16:40:08.247+0300 I NETWORK  [conn1] received client metadata from 127.0.0.1:60156 conn1: { driver: { name: "nodejs", version: "3.1.9" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v8.9.3, LE, mongodb-core: 3.1.8" }
+2019-04-22T16:49:31.641+0300 I CONTROL  [serviceShutdown] got SERVICE_CONTROL_STOP request from Windows Service Control Manager, will terminate after current cmd ends
+2019-04-22T16:49:31.642+0300 I NETWORK  [serviceShutdown] shutdown: going to close listening sockets...
+2019-04-22T16:49:31.642+0300 I CONTROL  [serviceShutdown] Shutting down free monitoring
+2019-04-22T16:49:31.642+0300 I FTDC     [serviceShutdown] Shutting down full-time diagnostic data capture
+2019-04-22T16:49:31.647+0300 I STORAGE  [serviceShutdown] WiredTigerKVEngine shutting down
+2019-04-22T16:49:31.647+0300 I STORAGE  [serviceShutdown] Shutting down session sweeper thread
+2019-04-22T16:49:31.647+0300 I STORAGE  [serviceShutdown] Finished shutting down session sweeper thread
+2019-04-22T16:49:31.742+0300 I STORAGE  [serviceShutdown] shutdown: removing fs lock...
+2019-04-22T16:49:31.742+0300 I CONTROL  [serviceShutdown] now exiting
+2019-04-22T17:00:34.236+0300 I CONTROL  [main] ***** SERVER RESTARTED *****
+2019-04-22T17:00:34.749+0300 I CONTROL  [main] Automatically disabling TLS 1.0, to force-enable TLS 1.0 specify --sslDisabledProtocols 'none'
+2019-04-22T17:00:34.752+0300 I CONTROL  [main] Trying to install Windows service 'MongoDB'
+2019-04-22T17:00:34.752+0300 I CONTROL  [main] Error connecting to the Service Control Manager: Access is denied. (5)

@@ -9,7 +9,7 @@
     "start:client": "webpack-dev-server --progress --config .\\webpack\\development.config.js --watch --hotOnly",
     "start:server": "nodemon --exec \"babel-node .\\server\\index.js --mode=development\" -w .\\server",
     "init:all": "node .\\npm_scripts\\createMongodbDirectory.js && npm run mongod && node .\\npm_scripts\\initMongodb.js",
-    "mongod": "start /D \"C:\\Program Files\\MongoDB\\Server\\4.0\\bin\" mongod.exe",
+    "mongod": "start /D \"C:\\Program Files\\MongoDB\\Server\\4.0\\bin\" mongod.exe -f C:\\Users\\AndreyRi\\WebstormProjects\\portalForStudents\\mongod.cfg",
     "postinstall": "npm run init:all"
   },
   "repository": {
