@@ -10,3 +10,6 @@ dist
 .chrome
 .npmrc
 local-packages.json
+mongodb/
+.cfg
+.log
