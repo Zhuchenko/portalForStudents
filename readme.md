@@ -2,14 +2,17 @@ PortalForStudents
 =====================
 Usage
 -----------------------------------
-### Setting up MongoDB
-1. Create database `PortalForStudents` _(configurable)_;
-2. Create three collections in the database:
-    * `students`;
-    * `contracts`.
-3. Database will be automatically connected when PortalForStudents server starts.
+### Before you start
+1. Install mongodb at the default location (`C:/Program Files/`);
+2. Stop the dafault `mongod` service.
 
 ### NPM Scripts
+`npm run init:all` - set up MongoDB:
+   * creates `mongodb` folder in project's root;
+   * creates `mongod` service and starts it;
+   * creates database `PortalForStudents` with two empty collections (`students`, `contracts`);
+   * database will be automatically connected when `PortalForStudents` server starts.
+
 `npm run build` - builds server and client applications into `dist` folder.
 
 `npm run prod` - starts `npm run build` script and then starts PortalForStudents server in `production mode` from `dist` folder.
