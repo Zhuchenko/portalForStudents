@@ -1,16 +1,35 @@
 import mongoose from 'mongoose'
+import crypto from 'crypto'
 
-const Schema = mongoose.Schema;
-const ObjectId = mongoose.Schema.Types.ObjectId;
+const { Schema } = mongoose;
 
 export const StudentSchema = new Schema({
     username: {
         type: String,
+        required: true
+    },
+    email: {
+        type: String,
         unique: true,
         required: true
     },
-    password: String
+    _hash: {
+        type: String
+    },
+    _salt: {
+        type: String
+    }
 });
+
+StudentSchema.methods.generateHash = function(password) {
+    this._salt = crypto.randomBytes(16).toString('hex');
+    this._hash = crypto.pbkdf2Sync(password, this._salt, 10000, 512, 'sha512').toString('hex');
+};
+
+StudentSchema.methods.validatePassword = function(password) {
+    const hash = crypto.pbkdf2Sync(password, this._salt, 10000, 512, 'sha512').toString('hex');
+    return this._hash.toString() === hash.toString();
+};
 
 export const ContractSchema = new Schema({
     number: {

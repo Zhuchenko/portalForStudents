@@ -1,39 +1,55 @@
 import { all, takeLatest, call, put } from 'redux-saga/effects'
 import * as actions from './actions'
-import { login, logout } from '../api/authorizationService'
+import { signin, signup, signout } from '../api/authorizationService'
 
 export default  function* authorizationSaga() {
     yield all([
-        watchLogin(),
-        watchLogout()
+        watchSignin(),
+        watchSignup(),
+        watchSignout()
     ])
 }
 
-function* watchLogin() {
-    yield takeLatest(actions.login, loginSaga)
+function* watchSignin() {
+    yield takeLatest(actions.signin, signinSaga)
 }
 
-function* watchLogout() {
-    yield takeLatest(actions.logout, logoutSaga)
+function* watchSignup() {
+    yield takeLatest(actions.signup, signupSaga)
 }
 
-function* loginSaga(action) {
+function* watchSignout() {
+    yield takeLatest(actions.signout, signoutSaga)
+}
+
+function* signinSaga(action) {
     try {
         const { email, password } = action.payload;
-        const username = yield call(login, email, password);
-        yield put(actions.loginSuccess({ username }));
+        const username = yield call(signin, email, password);
+        yield put(actions.signinSuccess({ username }));
     }
     catch (error) {
-        yield put(actions.loginFailure({error}))
+        yield put(actions.signinFailure({error}))
     }
 }
 
-function* logoutSaga() {
+function* signupSaga(action) {
     try {
-        yield call(logout);
-        yield put(actions.logoutSuccess())
+        const { email, password, username } = action.payload;
+        yield call(signup, email, password, username);
+        yield put(actions.signupSuccess());
     }
     catch (error) {
-        yield put(actions.logoutFailure({error}))
+        yield put(actions.signinFailure({error}))
+    }
+}
+
+function* signoutSaga() {
+    try {
+        yield call(signout);
+        yield put(actions.signoutSuccess())
+    }
+    catch (error) {
+        yield put(actions.signoutFailure({error}))
     }
 }

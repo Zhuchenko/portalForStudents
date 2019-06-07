@@ -1,18 +1,38 @@
 import express from 'express'
 import { Student } from '../mongoose/api/student'
 import passport from 'passport'
-import minimist from 'minimist'
-
-const argv = minimist(process.argv.slice(2))
-const serverConfig =
-    argv.mode === 'production' ?
-        require('../production.server.config')
-        :
-        require('../development.server.config');
 
 const router = express.Router();
 
-router.route('/login')
+router.route('/signup')
+    .post((req, res) => {
+            return Student.findOne({email: req.body.email}, (error, user) => {
+                if (error) {
+                    return res.status(500).end();
+                }
+                if (user) {
+                    return res.status(422).end();
+                } else {
+                    let student = new Student({email: req.body.email, username: req.body.username});
+                    student.generateHash(req.body.password);
+
+                    return student.save()
+                        .then(() => {
+                            return passport.authenticate('local', { session: false }, (err, passportUser) => {
+                                if(err) {
+                                    return res.status(500).end();
+                                }
+                                if(passportUser) {
+                                    return res.json({ username: passportUser.username });
+                                }
+                                return res.status(400).info;
+                            })(req, res);
+                        });
+                }
+            })
+    });
+
+router.route('/signin')
     .get((req, res) => {
         const username =
             req.isAuthenticated() ?
@@ -22,33 +42,18 @@ router.route('/login')
         res.json({ username })
     })
     .post((req, res) => {
-        const allowedLogins = serverConfig.authorization.allowedLogins;
-        if (allowedLogins && allowedLogins.length > 0 && !allowedLogins.includes(req.body.username)) {
-            return res.status(403).end()
-        }
-
-        return Student.findOne({ username: req.body.username }, (error, user) => {
-            if (error) {
-                return res.status(500).end()
+        return passport.authenticate('local', { session: false }, (err, passportUser) => {
+            if(err) {
+                return res.status(500).end();
             }
-            if (user) {
-                passport.authenticate('local')(req, res, () => {
-                    res.json({ username: req.user.username })
-                });
-            } else {
-                Student.register(new Student({ username: req.body.username }), req.body.password, (error) => {
-                    if (error) {
-                        return res.status(500).end()
-                    }
-                    passport.authenticate('local')(req, res, () => {
-                        res.json({ username: req.body.username })
-                    })
-                })
+            if(passportUser) {
+                return res.json({ username: passportUser.username });
             }
-        })
-    })
+            return res.status(400).info;
+        })(req, res);
+    });
 
-router.route('/logout')
+router.route('/signout')
     .get((req, res) => {
         req.logout();
         req.session.destroy(() => {

@@ -6,7 +6,7 @@ import SignInDialog from './signInDialog'
 import classNames from "./scss/button.module.scss";
 
 const UserControls = (props) => {
-    const { authorized, logout} = props;
+    const { authorized, signout} = props;
     if (!authorized) {
         return <SignInDialog/>
     }
@@ -14,7 +14,7 @@ const UserControls = (props) => {
     const {appbar__button} = classNames;
 
     return (
-        <button onClick={logout} className={appbar__button}>
+        <button onClick={signout} className={appbar__button}>
             Sign out
         </button>
     );
@@ -22,7 +22,7 @@ const UserControls = (props) => {
 
 UserControls.propTypes = {
     authorized: PropTypes.bool.isRequired,
-    logout: PropTypes.func.isRequired
+    signout: PropTypes.func.isRequired
 };
 
 export default connect(state => ({

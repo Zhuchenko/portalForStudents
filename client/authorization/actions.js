@@ -2,17 +2,23 @@ import { createAction } from 'redux-actions'
 
 export const init = createAction('INIT');
 
-export const login = createAction('LOGIN');
+export const signin = createAction('SIGNIN');
 
-export const loginSuccess = createAction('LOGIN_SUCCESS');
+export const signinSuccess = createAction('SIGNIN_SUCCESS');
 
-export const loginFailure = createAction('LOGIN_FAILURE');
+export const signinFailure = createAction('SIGNIN_FAILURE');
 
-export const logout = createAction('LOGOUT');
+export const signup = createAction('SIGNUP');
 
-export const logoutSuccess = createAction('LOGOUT_SUCCESS');
+export const signupSuccess = createAction('SIGNUP_SUCCESS');
 
-export const logoutFailure = createAction('LOGOUT_FAILURE');
+export const signupFailure = createAction('SIGNUP_FAILURE');
+
+export const signout = createAction('SIGNOUT');
+
+export const signoutSuccess = createAction('SIGNOUT_SUCCESS');
+
+export const signoutFailure = createAction('SIGNOUT_FAILURE');
 
 export const showForm = createAction('SHOW_FORM');
 
@@ -21,3 +27,5 @@ export const hideForm = createAction('HIDE_FORM');
 export const enterEmail = createAction('ENTER_EMAIL');
 
 export const enterPassword = createAction('ENTER_PASSWORD');
+
+export const enterUsername = createAction('ENTER_USERNAME');

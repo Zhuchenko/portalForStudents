@@ -1,11 +1,11 @@
-export const login = (username, password) => {
-    return fetch('/login', {
+export const signin = (email, password) => {
+    return fetch('/signin', {
         method: 'POST',
         credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ email, password })
     })
         .then(response => {
             if (response.status === 200) {
@@ -14,10 +14,28 @@ export const login = (username, password) => {
                 throw response.status
             }
         })
-}
+};
 
-export const logout = () => {
-    return fetch('/logout', {
+export const signup = (email, password, username) => {
+    return fetch('/signup', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password, username })
+    })
+        .then(response => {
+            if (response.status === 200) {
+                return response.json().then(data => data.username)
+            } else {
+                throw response.status
+            }
+        })
+};
+
+export const signout = () => {
+    return fetch('/signout', {
         method: 'GET',
         credentials: 'include'
     })
@@ -28,4 +46,4 @@ export const logout = () => {
                 throw response.status
             }
         })
-}
+};

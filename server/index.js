@@ -1,5 +1,4 @@
 import express from 'express'
-import path from 'path'
 import minimist from 'minimist'
 import bodyParser from 'body-parser'
 import fileUpload from 'express-fileupload'
@@ -8,12 +7,10 @@ import { connect } from './mongoose'
 import { Student } from './mongoose/api/student'
 import expressSession  from 'express-session'
 import passport from 'passport'
-import LocalStrategy from 'passport-local'
 
 import authorizationRouter from './routes/authorization'
 import timeRouter from './routes/time'
 import template from './template'
-import mongoose from "mongoose";
 
 const argv = minimist(process.argv.slice(2));
 const productionMode = argv.mode === 'production';
@@ -29,7 +26,6 @@ const app = express();
 app.set('port', serverConfig.port);
 app.set('view endine', 'ejs');
 
-app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(expressSession({ secret: serverConfig.authorization.sessionSecret, resave: false, saveUninitialized: false }));
 app.use(bodyParser.json());
 app.use(fileUpload());
@@ -37,7 +33,6 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(Student.authenticate()));
 passport.serializeUser(Student.serializeUser());
 passport.deserializeUser(Student.deserializeUser());
 
@@ -49,7 +44,7 @@ app.get('/*', (req, res) => {
         assetsRoot: serverConfig.assetsRoot,
         username: req.isAuthenticated() ? req.user.username : ''
     }))
-})
+});
 
 connect();
 

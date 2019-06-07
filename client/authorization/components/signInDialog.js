@@ -4,22 +4,63 @@ import {connect} from 'react-redux';
 import * as actions from '../actions';
 import Popup from './popup';
 import SignInForm from './signInForm';
-import classNames from './scss/button.module.scss';
+import SignUpForm from './signUpForm';
+import TabBar from '../../components/tabBar';
+import classNames from './scss/signInDialog.module.scss'
+
+const signIn = {
+    id: "signIn",
+    text: "Sign in"
+};
+
+const signUp = {
+    id: "signUp",
+    text: "Sign up"
+};
 
 class SignInDialog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {selectedId: -1};
+        this.tabs = [signIn, signUp];
+    }
+
+    handleChanged = (tab) => {
+        const {showForm} = this.props;
+        this.setState({selectedId: tab});
+        showForm();
+    };
+
+    showSignInForm = () => {this.handleChanged(signIn.id)};
+
+    showSignUpForm = () => {this.handleChanged(signUp.id)};
+
     render() {
-        const {isShown, showForm} = this.props;
-        const {appbar__button} = classNames;
+        const {isShown} = this.props;
+        const {appbar__button, signIn__form} = classNames;
 
         return (
             <React.Fragment>
-                <button onClick={showForm} className={appbar__button}>
-                    Sign in
+                <button onClick={this.showSignInForm} className={appbar__button}>
+                    {signIn.text}
+                </button>
+                <button onClick={this.showSignUpForm} className={appbar__button}>
+                    {signUp.text}
                 </button>
                 {
                     isShown &&
                     <Popup>
-                        <SignInForm/>
+                        <div className={signIn__form}>
+                            <TabBar handleChanged={this.handleChanged} tabs={this.tabs} selectedId={this.state.selectedId}/>
+                            {
+                                (this.state.selectedId === signIn.id) &&
+                                <SignInForm/>
+                            }
+                            {
+                                (this.state.selectedId === signUp.id) &&
+                                <SignUpForm/>
+                            }
+                                </div>
                     </Popup>
                 }
             </React.Fragment>
