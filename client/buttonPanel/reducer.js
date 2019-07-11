@@ -1,33 +1,41 @@
-import {handleActions} from 'redux-actions'
-import * as actions from './actions'
+import { handleActions } from 'redux-actions'
+import {init, startRoutine, finishRoutine} from './actions'
 
 const initialState = {
     startSelected: false,
-    startingTime: '',
+    startTime: ''
 };
 
 const reducer = handleActions(
     {
-        [actions.init]: (state) => ({
-            ...state,
-            startSelected: initialState.startSelected,
-            startingTime: initialState.startingTime,
+        [init]: () => ({
+            ...initialState
         }),
 
-        [actions.start]: (state, {payload}) => ({
+        [startRoutine.REQUEST]: (state) => ({
             ...state,
-            startSelected: true,
-            startingTime: payload.time
+            startSelected: true
+        }),
+        [startRoutine.SUCCESS]: (state) => ({
+            ...state
+        }),
+        [startRoutine.FAILURE]: state => ({
+            ...state,
+            startSelected: false
         }),
 
-        [actions.finishSuccess]: state => ({
+        [finishRoutine.REQUEST]: (state) => ({
+            ...state,
+            startSelected: false
+        }),
+        [finishRoutine.SUCCESS]: state => ({
             ...state,
             startSelected: false,
-            startingTime: ''
+            startTime: ''
         }),
-
-        [actions.finishFailure]: state => ({
+        [finishRoutine.FAILURE]: state => ({
             ...state,
+            startSelected: true
         }),
     },
     initialState

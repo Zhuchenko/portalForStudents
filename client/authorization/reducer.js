@@ -1,5 +1,5 @@
 import {handleActions} from 'redux-actions'
-import * as actions from './actions'
+import {init, loginRoutine, logoutRoutine, hideForm, showForm, enterEmail, enterPassword} from './actions'
 
 const initialState = {
     isShown: false,
@@ -9,62 +9,59 @@ const initialState = {
 
 const reducer = handleActions(
     {
-        [actions.init]: (state) => ({
-            ...state,
-            isShown: initialState.isShown,
-            email: initialState.email,
-            password: initialState.password
+        [init]: () => ({
+            ...initialState
         }),
 
-        [actions.loginSuccess]: (state) => ({
+        [loginRoutine.SUCCESS]: (state, {payload}) => ({
             ...state,
             isShown: false,
-            email: '',
+            email: payload.name,
             password: ''
         }),
 
-        [actions.loginFailure]: (state) => ({
+        [loginRoutine.FAILURE]: (state) => ({
             ...state,
             isShown: true,
             email: '',
             password: ''
         }),
 
-        [actions.logoutSuccess]: state => ({
+        [logoutRoutine.SUCCESS]: state => ({
             ...state,
             isShown: false,
             email: '',
             password: ''
         }),
 
-        [actions.logoutFailure]: state => ({
+        [logoutRoutine.FAILURE]: state => ({
             ...state
         }),
 
-        [actions.showForm]: state => ({
+        [showForm]: state => ({
             ...state,
             isShown: true,
             email: '',
             password: ''
         }),
 
-        [actions.hideForm]: state => ({
+        [hideForm]: state => ({
             ...state,
             isShown: false,
             email: '',
             password: ''
         }),
 
-        [actions.enterEmail]: (state, {payload}) => ({
+        [enterEmail]: (state, {payload}) => ({
             ...state,
-            username: '',
+            name: '',
             isShown: true,
             email: payload.email,
         }),
 
-        [actions.enterPassword]: (state, {payload}) => ({
+        [enterPassword]: (state, {payload}) => ({
             ...state,
-            username: '',
+            name: '',
             isShown: true,
             password: payload.password
         }),

@@ -4,30 +4,28 @@ import * as authorization from './authorization/actions'
 
 const initialState = {
     authorized: false,
-    username: '',
-}
+    name: '',
+};
 
 const reducer = handleActions(
     {
-        [application.init]: (state) => ({
-            ...state,
-            authorized: initialState.authorized,
-            username: initialState.username,
+        [application.init]: () => ({
+            ...initialState
         }),
 
-        [authorization.loginSuccess]: (state, {payload}) => ({
+        [authorization.loginRoutine.SUCCESS]: (state, {payload}) => ({
             ...state,
             authorized: true,
-            username: payload.username,
+            name: payload.name,
         }),
 
-        [authorization.logoutSuccess]: (state) => ({
+        [authorization.logoutRoutine.SUCCESS]: (state) => ({
             ...state,
             authorized: false,
-            username: '',
+            name: '',
         })
     },
     initialState
-)
+);
 
 export default reducer

@@ -1,27 +1,25 @@
 import express from 'express'
-import { getActiveContractByStudent, getWorkdayIdByDate, addTime, addWorkday} from '../mongoose/api/contract'
 import authenticationCheckMiddleware from '../middlewares/authenticationCheck'
+import { addStartTime, addFinishTime} from "../mongoose/api/workdays";
 
 const router = express.Router();
 
-router.route('/addTime')
+router.route('/start')
     .all(authenticationCheckMiddleware)
     .post((req, res) => {
-        return (async () => {
-            const contractId = await getActiveContractByStudent(req.body.username);
-            let workdayId = await  getWorkdayIdByDate(contractId, req.body.date);
-            if(!workdayId) {
-                await addWorkday(contractId, req.body.date);
-                workdayId = await getWorkdayIdByDate(contractId, req.body.date);
-            }
+        (async () => {
+            await addStartTime(req.body._id);
+            res.end();
+        })();
+    });
 
-            const diff = await addTime(contractId, workdayId, {
-                startingTime: req.body.start,
-                endingTime: req.body.finish
-            });
-
-            return res.json({diff});
-        })()
+router.route('/finish')
+    .all(authenticationCheckMiddleware)
+    .post((req, res) => {
+        (async() =>{
+            await addFinishTime(req.body._id);
+            res.end();
+        })();
     });
 
 export default router

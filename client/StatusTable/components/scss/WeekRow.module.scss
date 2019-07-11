@@ -1,0 +1,18 @@
+@import "../../../constants/variables.module";
+
+.week-row__cell {
+  font: {
+    family: 'Roboto', sans-serif;
+    size: 9px;
+    weight: normal;
+  }
+
+  border: {
+    bottom: 1px solid $table-border-color;
+  }
+
+  &_name-of-day {
+    text-align: left;
+    padding: 5px 15px;
+  }
+}

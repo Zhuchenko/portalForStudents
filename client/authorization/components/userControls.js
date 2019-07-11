@@ -1,12 +1,18 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import * as actions from '../actions'
+import React, {useCallback} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
 import SignInDialog from './signInDialog'
 import classNames from "./scss/button.module.scss";
+import * as selectors from "../selectors";
+import {logoutRoutine} from "../actions";
 
 const UserControls = (props) => {
-    const { authorized, logout} = props;
+    const dispatch = useDispatch();
+    const handleLogOutClick = useCallback(
+        () => dispatch(logoutRoutine.trigger()),
+        [dispatch]
+    );
+
+    const authorized = useSelector(selectors.isAuthorized);
     if (!authorized) {
         return <SignInDialog/>
     }
@@ -14,17 +20,10 @@ const UserControls = (props) => {
     const {appbar__button} = classNames;
 
     return (
-        <button onClick={logout} className={appbar__button}>
-            Sign out
+        <button onClick={handleLogOutClick} className={appbar__button}>
+            Sign out {props.email}
         </button>
     );
 };
 
-UserControls.propTypes = {
-    authorized: PropTypes.bool.isRequired,
-    logout: PropTypes.func.isRequired
-};
-
-export default connect(state => ({
-    authorized: state.application.authorized
-}), actions)(UserControls)
+export default UserControls;

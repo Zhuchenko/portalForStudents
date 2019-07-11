@@ -1,24 +1,39 @@
-import { all, takeLatest, call, put } from 'redux-saga/effects'
-import * as actions from './actions'
-import { addTime } from '../api/timeService'
+import { all, takeLatest, call, put, select } from 'redux-saga/effects'
+import {startRoutine, finishRoutine} from './actions'
+import { start, finish } from '../api/timeService'
+import {getStudentId} from "../rootSelectors";
 
 export default  function* buttonPanelSaga() {
     yield all([
-        watchFinish()
+        takeLatest(finishRoutine.TRIGGER, finishSaga),
+        takeLatest(startRoutine.TRIGGER, startSaga)
     ])
 }
 
-function* watchFinish() {
-    yield takeLatest(actions.finish, finishSaga)
-}
-
-function* finishSaga(action) {
+function* finishSaga() {
     try {
-        const { username, date, start, finish } = action.payload;
-        yield call(addTime, username, date, start, finish);
-        yield put(actions.finishSuccess());
+        const _id = yield select(getStudentId);
+
+        yield put(finishRoutine.request());
+        yield call(finish, _id);
+        yield put(finishRoutine.success());
     }
     catch (error) {
-        yield put(actions.finishFailure());//{error}
+        console.error(error);
+        yield put(finishRoutine.failure());
+    }
+}
+
+function* startSaga() {
+    try {
+        const _id = yield select(getStudentId);
+
+        yield put(startRoutine.request());
+        yield call(start, _id);
+        yield put(startRoutine.success());
+    }
+    catch (error) {
+        console.error(error);
+        yield put(startRoutine.failure());
     }
 }

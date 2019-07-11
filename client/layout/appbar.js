@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import UserControls from '../authorization/components/userControls'
-import DateControl from '../components/dateControl'
+import DateControl from '../components/DateControl'
 import ButtonPanel from '../buttonPanel/components/buttonPanel'
 import classNames from './scss/appbar.module.scss';
 

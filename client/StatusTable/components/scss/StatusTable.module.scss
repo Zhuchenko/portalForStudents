@@ -1,0 +1,75 @@
+@import "../../../constants/variables.module";
+
+.status-table {
+  border: {
+    spacing: 0;
+  }
+  text-align: center;
+
+  &__col-day {
+    width: 20%;
+  }
+  &__col-number {
+    width: 5%;
+  }
+  &__col-start {
+    width: 12%;
+  }
+  &__col-finish {
+    width: 12%;
+  }
+  &__col-time {
+    width: 12%;
+  }
+  &__col-real-time {
+    width: 12%;
+  }
+
+  &__head-cell {
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 0.85em;
+      weight: normal;
+    }
+    padding: 5px;
+    height: 40px;
+    background: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    border-bottom: 1px solid $table-border-color;
+
+    &_name-of-day {
+      text-align: left;
+      padding: 5px 15px;
+    }
+
+    // todo: the problem with last column start from here
+    &_real-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__week-row {
+    background: $week_row-background-color;
+    height: 40px;
+  }
+
+  &__day-row {
+    height: 40px;
+    &:hover {
+      background: $day_row-background-color;
+    }
+
+    font: {
+      family: sans-serif;
+      size: 13px;
+      weight: normal;
+    }
+  }
+}
+
+
+

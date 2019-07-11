@@ -1,39 +1,31 @@
 import { all, takeLatest, call, put } from 'redux-saga/effects'
-import * as actions from './actions'
+import {loginRoutine, logoutRoutine} from './actions'
 import { login, logout } from '../api/authorizationService'
 
 export default  function* authorizationSaga() {
     yield all([
-        watchLogin(),
-        watchLogout()
+        takeLatest(loginRoutine, loginSaga),
+        takeLatest(logoutRoutine, logoutSaga)
     ])
-}
-
-function* watchLogin() {
-    yield takeLatest(actions.login, loginSaga)
-}
-
-function* watchLogout() {
-    yield takeLatest(actions.logout, logoutSaga)
 }
 
 function* loginSaga(action) {
     try {
         const { email, password } = action.payload;
-        const username = yield call(login, email, password);
-        yield put(actions.loginSuccess({ username }));
+        const id = yield call(login, email, password);
+        yield put(loginRoutine.success({ name: id }));
     }
     catch (error) {
-        yield put(actions.loginFailure({error}))
+        yield put(loginRoutine.failure({error}))
     }
 }
 
 function* logoutSaga() {
     try {
         yield call(logout);
-        yield put(actions.logoutSuccess())
+        yield put(logoutRoutine.success())
     }
     catch (error) {
-        yield put(actions.logoutFailure({error}))
+        yield put(logoutRoutine.failure({error}))
     }
 }

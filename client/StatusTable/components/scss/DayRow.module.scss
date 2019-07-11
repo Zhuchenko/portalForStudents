@@ -1,0 +1,21 @@
+@import "../../../constants/variables.module";
+
+.day-row__cell {
+  border: {
+    bottom: 1px solid $table-border-color;
+  }
+
+  &_name-of-day {
+    text-align: left;
+    padding: 5px 15px;
+    font: {
+      family: 'Roboto', sans-serif;
+      size: 13px;
+      weight: bold;
+    }
+  }
+
+  &_timestamp {
+    padding: 5px;
+  }
+}

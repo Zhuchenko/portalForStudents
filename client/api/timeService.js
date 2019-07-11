@@ -1,17 +1,21 @@
-export const addTime = (username, date, start, finish) => {
-    return fetch('/addTime', {
+export const start = (_id) => {
+    return fetch('/start', {
         method: 'POST',
         credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({username, date, start, finish})
+        body: JSON.stringify({ _id })
     })
-        .then(response => {
-            if (response.status === 200) {
-                return response.json().then(data => data.diff)
-            } else {
-                throw response.status
-            }
-        })
+};
+
+export const finish = (_id) => {
+    return fetch('/finish', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ _id })
+    })
 };

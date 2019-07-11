@@ -9,8 +9,8 @@ export const getContractById = async (contractId) => {
     return Contract.findOne({ _id: contractId }).exec()
 };
 
-export const getActiveContractByStudent = async (username) => {
-    return Contract.findOne({ student: username, status: 'Active' }).exec()
+export const getActiveContractByStudent = async (_id) => {
+    return Contract.findOne({ student: _id, status: 'Active' }).exec()
 };
 
 export const addContract = async (newContract) => {

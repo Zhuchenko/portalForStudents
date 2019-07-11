@@ -12,6 +12,8 @@ import LocalStrategy from 'passport-local'
 
 import authorizationRouter from './routes/authorization'
 import timeRouter from './routes/time'
+import studentInfoRouter from './routes/studentInfo'
+
 import template from './template'
 import mongoose from "mongoose";
 
@@ -37,19 +39,21 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(Student.authenticate()));
+passport.use(Student.createStrategy());
 passport.serializeUser(Student.serializeUser());
 passport.deserializeUser(Student.deserializeUser());
 
 app.use(authorizationRouter);
 app.use(timeRouter);
+app.use(studentInfoRouter);
+
 
 app.get('/*', (req, res) => {
     res.send(template({
         assetsRoot: serverConfig.assetsRoot,
-        username: req.isAuthenticated() ? req.user.username : ''
+        _id: req.isAuthenticated() ? req.user._id : ''
     }))
-})
+});
 
 connect();
 

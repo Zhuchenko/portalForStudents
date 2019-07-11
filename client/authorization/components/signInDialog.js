@@ -1,36 +1,34 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import * as actions from '../actions';
-import Popup from './popup';
-import SignInForm from './signInForm';
-import classNames from './scss/button.module.scss';
+import React, {useCallback} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {showForm} from '../actions'
+import Popup from './popup'
+import SignInForm from './signInForm'
+import classNames from './scss/button.module.scss'
+import * as selectors from '../selectors'
 
-class SignInDialog extends Component {
-    render() {
-        const {isShown, showForm} = this.props;
-        const {appbar__button} = classNames;
+const SignInDialog = () => {
+    const isShown = useSelector(selectors.isShown);
+    const dispatch = useDispatch();
+    const handleSignInClick = useCallback(
+        () => dispatch(showForm()),
+        [dispatch]
+    );
 
-        return (
-            <React.Fragment>
-                <button onClick={showForm} className={appbar__button}>
-                    Sign in
-                </button>
-                {
-                    isShown &&
-                    <Popup>
-                        <SignInForm/>
-                    </Popup>
-                }
-            </React.Fragment>
-        )
-    }
-}
-SignInDialog.propTypes = {
-    isShown: PropTypes.bool.isRequired,
-    showForm: PropTypes.func.isRequired,
+    const {appbar__button} = classNames;
+
+    return (
+        <React.Fragment>
+            <button onClick={handleSignInClick} className={appbar__button}>
+                Sign in
+            </button>
+            {
+                isShown &&
+                <Popup>
+                    <SignInForm/>
+                </Popup>
+            }
+        </React.Fragment>
+    )
 };
 
-export default connect(state => ({
-    isShown: state.authorization.isShown
-}), actions)(SignInDialog)
+export default SignInDialog;

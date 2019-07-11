@@ -2,9 +2,8 @@ import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 const template = (props) => {
-    const { assetsRoot, username } = props
-
-    const config = { username }
+    const { assetsRoot, _id } = props
+    const config = { _id }
 
     const sheet = new ServerStyleSheet()
     const styles = sheet.getStyleTags()

@@ -1,28 +1,23 @@
-import React, {Component} from 'react'
+import React, {useEffect, useState} from 'react'
 import * as ReactDOM from 'react-dom';
 import classNames from './scss/popup.module.scss';
 
-class Popup extends Component {
-    constructor(props) {
-        super(props);
-        this.modal = document.createElement('div');
-        this.modal.className = classNames.popup;
-    }
+const Popup = (props) => {
+    let popup = document.createElement('div');
+    popup.className = classNames.popup;
+    const [modal, setModal] = useState(popup);
 
-    componentDidMount() {
-        document.getElementById('root').appendChild(this.modal);
-    }
+    useEffect(() => {
+        document.getElementById('root').appendChild(modal);
+        return () => {
+            document.getElementById('root').removeChild(modal)
+        }
+    });
 
-    componentWillUnmount() {
-        document.getElementById('root').removeChild(this.modal);
-    }
-
-    render() {
-        return ReactDOM.createPortal(
-            this.props.children,
-            this.modal,
-        );
-    }
-}
+    return ReactDOM.createPortal(
+        props.children,
+        modal
+    );
+};
 
 export default Popup

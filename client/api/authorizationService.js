@@ -1,20 +1,14 @@
-export const login = (username, password) => {
+export const login = (_id, password) => {
     return fetch('/login', {
         method: 'POST',
         credentials: 'include',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ _id, password })
     })
-        .then(response => {
-            if (response.status === 200) {
-                return response.json().then(data => data.username)
-            } else {
-                throw response.status
-            }
-        })
-}
+        .then(response => response.json().then(data => data._id))
+};
 
 export const logout = () => {
     return fetch('/logout', {
@@ -28,4 +22,4 @@ export const logout = () => {
                 throw response.status
             }
         })
-}
+};

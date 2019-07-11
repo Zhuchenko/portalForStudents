@@ -7,7 +7,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.Promise = Promise;
 
-StudentSchema.plugin(passportLocalMongoose);
+//StudentSchema.plugin(passportLocalMongoose);
 
 export const connect = () => {
     return mongoose.connect(serverConfig.databaseConnectionURL, { useNewUrlParser: true })
